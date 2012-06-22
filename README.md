@@ -31,3 +31,12 @@ and
 It is know to belong the
 [NP-complete]("Wikipedia on Computational Complexity Theory")
 complexity class.
+
+Mona Lisa
+---------
+
+The Mona Lisa (La Gioconda) is a famous painting by the famous Italian
+Renaissance artist
+[Leonardo da Vinci](http://en.wikipedia.org/wiki/Leonardo_da_Vinci "Wikipedia on Leonardo da Vinci").
+The painting is well known for the 
+[enigmatic smile]("Wikipedia on Speculation about Mona Lisa").
