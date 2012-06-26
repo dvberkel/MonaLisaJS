@@ -1,4 +1,4 @@
-(function(Backbone, MonaLisa, undefined){
+(function(_, Backbone, MonaLisa, undefined){
     var ErrorLog = function(){
 	this._log = [];
 	
@@ -12,6 +12,8 @@
     };
 
     var Point = Backbone.Model.extend({
+	missing : _.template("A Point should have a parameter '<%= parameter %>'"),
+
 	initialize : function(){
 	    if (!this.isValid()) {
 		throw "invalid object";
@@ -20,12 +22,11 @@
 
 	validate : function(attributes) {
 	    var log = new ErrorLog();
-	    if (undefined === attributes.x) {
-		log.add("A Point should have a parameter 'x'");
-	    }
-	    if (undefined === attributes.y) {
-		log.add("A Point should have a parameter 'x'");
-	    }
+	    _.each([ 'x', 'y'], function(parameter){
+		if (_.isUndefined(attributes[parameter])) {
+		    log.add(this.isMissing({ parameter : parameter }));
+		}
+	    });
 	    if (log.hasErrors()) {
 		return log;
 	    }
@@ -33,4 +34,4 @@
     });
 
     MonaLisa.Point = Point;
-})(Backbone, MonaLisa);
+})(_, Backbone, MonaLisa);
