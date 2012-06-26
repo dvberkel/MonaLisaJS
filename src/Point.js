@@ -20,7 +20,10 @@
 
 	validate : function(attributes) {
 	    var log = new ErrorLog();
-	    if (undefined == attributes.x) {
+	    if (undefined === attributes.x) {
+		log.add("A Point should have a parameter 'x'");
+	    }
+	    if (undefined === attributes.y) {
 		log.add("A Point should have a parameter 'x'");
 	    }
 	    if (log.hasErrors()) {
