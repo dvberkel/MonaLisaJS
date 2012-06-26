@@ -1,4 +1,4 @@
-(function(Backbone, undefined){
+(function(Backbone, MonaLisa, undefined){
     var Network = Backbone.Collection.extend({
 	addPoint : function(aPoint) {
 	    this.add([aPoint]);
@@ -9,5 +9,5 @@
 	}
     });
 
-    window.Network = Network;
-})(Backbone);
+    MonaLisa.Network = Network;
+})(Backbone, MonaLisa);

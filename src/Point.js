@@ -1,6 +1,6 @@
-(function(Backbone, undefined){
+(function(Backbone, MonaLisa, undefined){
     var Point = Backbone.Model.extend({
     });
 
-    window.Point = Point;
-})(Backbone);
+    MonaLisa.Point = Point;
+})(Backbone, MonaLisa);
