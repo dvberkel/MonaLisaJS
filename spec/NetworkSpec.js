@@ -4,4 +4,13 @@ describe("A Network", function(){
 
 	expect(network.numberOfPoints()).toBe(0);
     });
+
+    it("should be build up by adding Points", function(){
+	var network = new Network();
+
+	network.addPoint(new Point());
+	network.addPoint(new Point());
+
+	expect(network.numberOfPoints()).toBe(2);
+    });
 });
