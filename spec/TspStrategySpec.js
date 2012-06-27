@@ -10,7 +10,7 @@ describe("A TspStrategy", function(){
 
 	    var path = strategy.solveFor(network);
 
-	    expect(path.length()).toBeCloseTo(4.0);
+	    expect(path).toHaveALengthCloseTo(4.0);;
 	});
     });
 });

@@ -24,8 +24,8 @@ describe("A Path", function(){
 	    });
 	};
 	
-	expect(aRectangularPathOfWidth(1).length()).toBeCloseTo(4.0);
-	expect(aRectangularPathOfWidth(2).length()).toBeCloseTo(6.0);
-	expect(aRectangularPathOfWidth(3).length()).toBeCloseTo(8.0);
+	expect(aRectangularPathOfWidth(1)).toHaveALengthCloseTo(4.0);
+	expect(aRectangularPathOfWidth(2)).toHaveALengthCloseTo(6.0);
+	expect(aRectangularPathOfWidth(3)).toHaveALengthCloseTo(8.0);
     });
 });
