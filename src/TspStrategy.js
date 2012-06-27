@@ -33,12 +33,32 @@
 	};
     };
 
+    
+    var Random = function(metric){
+	this.solveFor = function(network){
+	    var toVisit = network.toArray();
+	    var visited = [toVisit[0]]; toVisit = toVisit.slice(1);
+	    
+	    while (toVisit.length > 0) {
+		var anyIndex = 0;
+		visited.push(toVisit[anyIndex]);
+		toVisit.splice(anyIndex, 1);
+	    }
+	    return new MonaLisa.Path({ metric : metric, points : visited });
+	};
+    };
+
     MonaLisa.Strategy.BruteForce = {
 	withMetric : function(metric){
 	    return new BruteForce(metric);
 	}
     };
     MonaLisa.Strategy.Greedy = {
+	withMetric : function(metric){
+	    return new Greedy(metric);
+	}
+    };
+    MonaLisa.Strategy.Random = {
 	withMetric : function(metric){
 	    return new Greedy(metric);
 	}
