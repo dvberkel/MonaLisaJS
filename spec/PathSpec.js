@@ -12,17 +12,20 @@ describe("A Path", function(){
     });
 
     it("should calculate its length", function(){
-	var path = new MonaLisa.Path({ 
-	    metric : MonaLisa.Metric.euclidean,
-	    points : [
-		new MonaLisa.Point({ x : 0, y : 0}),
-		new MonaLisa.Point({ x : 1, y : 0}),
-		new MonaLisa.Point({ x : 1, y : 1}),
-		new MonaLisa.Point({ x : 0, y : 1}),
-	    ]
-	});
+	var aRectangularPathOfWidth = function(width) {
+ 	    return new MonaLisa.Path({ 
+		metric : MonaLisa.Metric.euclidean,
+		points : [
+		    new MonaLisa.Point({ x : 0, y : 0}),
+		    new MonaLisa.Point({ x : width, y : 0}),
+		    new MonaLisa.Point({ x : width, y : 1}),
+		    new MonaLisa.Point({ x : 0, y : 1}),
+		]
+	    });
+	};
 	
-	expect(path.length()).toBeCloseTo(4.0);
-
+	expect(aRectangularPathOfWidth(1).length()).toBeCloseTo(4.0);
+	expect(aRectangularPathOfWidth(2).length()).toBeCloseTo(6.0);
+	expect(aRectangularPathOfWidth(3).length()).toBeCloseTo(8.0);
     });
 });

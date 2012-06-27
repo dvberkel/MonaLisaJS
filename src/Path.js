@@ -21,7 +21,16 @@
 	},
 
 	length : function() {
-	    return 4.0;
+	    var d = this.get("metric");
+	    var points = this.get("points");
+	    var total = 0.0;
+	    for (var index = 0; index < points.length; index++) {
+		var nextIndex = ((index + 1) < points.length) ? index + 1 : 0;
+		var a = points[index];
+		var b = points[nextIndex];
+		total += d(a, b);
+	    }
+	    return total;
 	}
     });
     
