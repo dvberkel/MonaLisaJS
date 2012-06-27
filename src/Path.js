@@ -8,7 +8,7 @@
 	    }
 	},
 	
-	validate : function(){
+	validate : function(attributes){
 	    var log = new MonaLisa.ErrorLog();
 	    _.each([ 'metric', 'points'], function(parameter){
 		if (_.isUndefined(attributes[parameter])) {
@@ -18,6 +18,10 @@
 	    if (log.hasErrors()) {
 		return log;
 	    }
+	},
+
+	length : function() {
+	    return 4.0;
 	}
     });
     
