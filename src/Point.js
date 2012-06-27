@@ -30,7 +30,15 @@
 	    if (log.hasErrors()) {
 		return log;
 	    }
-	}
+	},
+
+	x : function() {
+	    return this.get("x");
+	},
+
+	y : function() {
+	    return this.get("y");
+	}	
     });
 
     MonaLisa.Point = Point;
