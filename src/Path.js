@@ -1,4 +1,13 @@
 (function(_, Backbone, MonaLisa, undefined){
+    var pathLength = function(d, points){
+	var total = 0.0;
+	for (var index = 0; index < points.length; index++) {
+	    var nextIndex = ((index + 1) < points.length) ? index + 1 : 0;
+	    total += d(points[index], points[nextIndex]);
+	}
+	return total;
+    };
+
     var Path = Backbone.Model.extend({
 	isMissing : _.template("A Path should have a parameter '<%= parameter %>'"),
 	
@@ -21,16 +30,7 @@
 	},
 
 	length : function() {
-	    var d = this.get("metric");
-	    var points = this.get("points");
-	    var total = 0.0;
-	    for (var index = 0; index < points.length; index++) {
-		var nextIndex = ((index + 1) < points.length) ? index + 1 : 0;
-		var a = points[index];
-		var b = points[nextIndex];
-		total += d(a, b);
-	    }
-	    return total;
+	    return pathLength(this.get("metric"), this.get("points"));
 	}
     });
     
