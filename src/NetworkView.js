@@ -1,4 +1,4 @@
-(function($, Backbone, Raphael, MonaLisa, undefined){
+(function($, _, Backbone, Raphael, MonaLisa, undefined){
     
     var NetworkView = Backbone.View.extend({
 	initialize : function(){
@@ -9,8 +9,14 @@
 	},
 
 	render : function() {
+	    var view = this;
+	    var tx = view.options.transformX;
+	    var ty = view.options.transformY;
+	    this.model.forEach(function(point){
+		view.paper.circle(tx(point.x()), ty(point.y()), 5);
+	    });
 	}
     });
 
     MonaLisa.NetworkView = NetworkView;
-})(jQuery, Backbone, Raphael, MonaLisa);
+})(jQuery, _, Backbone, Raphael, MonaLisa);
