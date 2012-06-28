@@ -2,9 +2,6 @@
     
     var NetworkView = Backbone.View.extend({
 	initialize : function(){
-	    this.paper = Raphael(this.options.elementId, this.options.width, this.options.height);
-	    this.paper.rect(0,0, this.options.width, this.options.height).attr("fill", "ivory");
-
 	    this.render();
 	},
 
@@ -13,8 +10,12 @@
 	    var tx = view.options.transformX;
 	    var ty = view.options.transformY;
 	    this.model.forEach(function(point){
-		view.paper.circle(tx(point.x()), ty(point.y()), 5);
+		view.paper().circle(tx(point.x()), ty(point.y()), 5);
 	    });
+	},
+
+	paper : function(){
+	    return this.options.paper;
 	}
     });
 
