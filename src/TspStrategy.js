@@ -48,19 +48,15 @@
 	};
     };
 
-    MonaLisa.Strategy.BruteForce = {
-	withMetric : function(metric){
-	    return new BruteForce(metric);
-	}
-    };
-    MonaLisa.Strategy.Greedy = {
-	withMetric : function(metric){
-	    return new Greedy(metric);
-	}
-    };
-    MonaLisa.Strategy.Random = {
-	withMetric : function(metric){
-	    return new Random(metric);
-	}
-    };
+    var strategyWrapper = function(Strategy){
+	return {
+	    withMetric : function(metric){
+		return new Strategy(metric);
+	    }
+	};
+    }
+
+    MonaLisa.Strategy.BruteForce = strategyWrapper(BruteForce);
+    MonaLisa.Strategy.Greedy = strategyWrapper(Greedy);
+    MonaLisa.Strategy.Random = strategyWrapper(Random);
 })(_, MonaLisa);
