@@ -2,8 +2,8 @@
     
     var NetworkView = Backbone.View.extend({
 	initialize : function(){
-	    this.paper = Raphael("viewport", 460, 320);
-	    this.paper.rect(0,0, 460, 320).attr("fill", "ivory");
+	    this.paper = Raphael(this.options.elementId, this.options.width, this.options.height);
+	    this.paper.rect(0,0, this.options.width, this.options.height).attr("fill", "ivory");
 
 	    this.render();
 	},
