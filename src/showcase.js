@@ -15,5 +15,14 @@
 	    transformX : function(x){ return 50 * x + 230 },
 	    transformY : function(y){ return 50 * y + 160 }
 	});
+
+	var path = MonaLisa.Strategy.Greedy.withMetric(MonaLisa.Metric.euclidean).solveFor(network);
+
+	new MonaLisa.PathView({
+	    model : path,
+	    paper : paper,
+	    transformX : function(x){ return 50 * x + 230 },
+	    transformY : function(y){ return 50 * y + 160 }
+	});
     });
 })(jQuery, Raphael,  MonaLisa);
