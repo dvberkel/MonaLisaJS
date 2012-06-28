@@ -60,7 +60,7 @@
     };
     MonaLisa.Strategy.Random = {
 	withMetric : function(metric){
-	    return new Greedy(metric);
+	    return new Random(metric);
 	}
     };
 })(_, MonaLisa);
