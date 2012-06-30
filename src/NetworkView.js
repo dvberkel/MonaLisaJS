@@ -10,7 +10,7 @@
 	    var tx = view.options.transformX;
 	    var ty = view.options.transformY;
 	    this.model.forEach(function(point){
-		view.paper().circle(tx(point.x()), ty(point.y()), 5);
+		var circle = view.paper().circle(tx(point.x()), ty(point.y()), 5);
 	    });
 	},
 
