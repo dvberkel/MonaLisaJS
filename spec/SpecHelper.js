@@ -17,6 +17,10 @@ beforeEach(function() {
 	toHaveALengthCloseTo : function(expectedLength) {
 	    var actualLength = this.actual.length();
 	    return is(actualLength).closeTo(expectedLength);
+	},
+	toHaveNPoints : function(expectedNumberOfPoints) {
+	    var actualNumberOfPoints = this.actual.numberOfPoints();
+	    return actualNumberOfPoints == expectedNumberOfPoints;
 	}
     });
 });
