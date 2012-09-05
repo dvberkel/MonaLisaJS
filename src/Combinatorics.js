@@ -44,10 +44,9 @@
 	var result = undefined;
 	var index = lastStepUpIndexOf(indices);
 	if (index >= 0) {
-	    var originalIndex = index;
-	    var swapIndex = from(originalIndex).swapIndexFor(copy);
-	    swap(originalIndex, swapIndex).of(copy);
-	    result = from(originalIndex).reverseTailFor(copy);
+	    var swapIndex = from(index).swapIndexFor(copy);
+	    swap(index, swapIndex).of(copy);
+	    result = from(index).reverseTailFor(copy);
 	}
 	return result;
     };
