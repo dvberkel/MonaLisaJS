@@ -10,9 +10,9 @@
     var nextPermutation = function(indices){
 	var copy = indices.slice(0, indices.length);
 	var result = undefined;
-	if (copy == [0, 1]){
+	if (copy.length == 2 && copy[0] === 0) {
 	    result = copy;
-	    result.reverse;
+	    result.reverse();
 	}
 	return result;
     };
