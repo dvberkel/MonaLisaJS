@@ -11,12 +11,17 @@
 	var copy = indices.slice(0, indices.length);
 	var result = undefined;
 	var index = copy.length - 2;
-	while (index >= 0 && copy[index] > copy[index + 1]) { index = index - 1; }
+	while (index >= 0 && copy[index] > copy[index + 1]) { index--; }
 	if (index >= 0) {
+	    var originalIndex = index;
 	    var insert = copy.splice(index, 1)[0]
 	    while (index < copy.length && insert < copy[index]) { index++; }
-	    copy.splice(index, 0, insert);
-	    result = copy;
+	    insert = copy.splice(index - 1, 1, insert)[0];
+	    copy.splice(originalIndex, 0, insert);
+	    var head = copy.slice(0, originalIndex + 1);
+	    var tail = copy.slice(originalIndex + 1);
+	    tail.reverse();
+	    result = head.concat(tail);
 	}
 	return result;
     };

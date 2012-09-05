@@ -23,7 +23,7 @@ describe("Combinatorics", function(){
 	    expect(permutations).toContain(['b', 'a']);
 	});
 
-	xit("should provide  all permutations for an array of length 3", function(){
+	it("should provide  all permutations for an array of length 3", function(){
 	    var permutations = [];
 
 	    Combinatorics.allPermutationsOf(['a', 'b', 'c'], function(permutation){
