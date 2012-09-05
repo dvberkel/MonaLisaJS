@@ -7,21 +7,47 @@
 	};
     };
 
+    var lastStepUpIndexOf = function(indices){
+	var index = indices.length - 2;
+	while (index >= 0 && indices[index] > indices[index + 1]) { index--; }
+	return index;
+    };
+
+    var from = function(originalIndex){	
+	return {
+	    swapIndexFor : function(indices) {
+		var target = indices[originalIndex];
+		var index = originalIndex;
+		while (index < indices.length && target <= indices[index]) { index++; }
+		return index - 1;
+	    },
+	    reverseTailFor : function(indices){
+		var head = indices.slice(0, originalIndex + 1);
+		var tail = indices.slice(originalIndex + 1);
+		tail.reverse();
+		return head.concat(tail);		
+	    }
+	};
+    };
+    
+    var swap = function(i, j){
+	return {
+	    of : function(indices){
+		var insert = indices.splice(j, 1, indices[i])[0];
+		indices.splice(i, 1, insert);
+	    }
+	};
+    };
+    
     var nextPermutation = function(indices){
 	var copy = indices.slice(0, indices.length);
 	var result = undefined;
-	var index = copy.length - 2;
-	while (index >= 0 && copy[index] > copy[index + 1]) { index--; }
+	var index = lastStepUpIndexOf(indices);
 	if (index >= 0) {
 	    var originalIndex = index;
-	    var insert = copy.splice(index, 1)[0]
-	    while (index < copy.length && insert < copy[index]) { index++; }
-	    insert = copy.splice(index - 1, 1, insert)[0];
-	    copy.splice(originalIndex, 0, insert);
-	    var head = copy.slice(0, originalIndex + 1);
-	    var tail = copy.slice(originalIndex + 1);
-	    tail.reverse();
-	    result = head.concat(tail);
+	    var swapIndex = from(originalIndex).swapIndexFor(copy);
+	    swap(originalIndex, swapIndex).of(copy);
+	    result = from(originalIndex).reverseTailFor(copy);
 	}
 	return result;
     };
