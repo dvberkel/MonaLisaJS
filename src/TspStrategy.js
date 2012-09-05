@@ -3,9 +3,16 @@
 
     var BruteForce = function(metric){
 	this.solveFor = function(network){
-	    return {
-		length : function(){ return 4.0; }
-	    };
+	    var toVisit = network.toArray();
+	    var currentBestPath = new MonaLisa.Path({ metric : metric, points : toVisit });
+	    Combinatorics.allPermutationsOf(toVisit, function(candidate){
+		var candidatePath = new MonaLisa.Path({ metric : metric, points : candidate });
+		if (candidatePath.length() < currentBestPath.length()) {
+		    currentBestPath = candidatePath;
+		}
+	    });
+	    
+	    return currentBestPath;
 	};
     };
     
