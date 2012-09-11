@@ -2,13 +2,16 @@
     MonaLisa.Strategy = {};
 
     var BruteForce = function(metric){
-	this.solveFor = function(network){
+	this.solveFor = function(network, callback){
+	    callback = callback || function(){};
 	    var toVisit = network.toArray();
 	    var currentBestPath = new MonaLisa.Path({ metric : metric, points : toVisit });
+	    callback(currentBestPath);
 	    Combinatorics.allPermutationsOf(toVisit, function(candidate){
 		var candidatePath = new MonaLisa.Path({ metric : metric, points : candidate });
 		if (candidatePath.length() < currentBestPath.length()) {
 		    currentBestPath = candidatePath;
+		    callback(currentBestPath);
 		}
 	    });
 	    
@@ -17,9 +20,11 @@
     };
     
     var Greedy = function(metric){
-	this.solveFor = function(network){
+	this.solveFor = function(network, callback){
+	    callback = callback || function(){};
 	    var toVisit = network.toArray();
 	    var visited = [toVisit[0]]; toVisit = toVisit.slice(1);
+	    callback(new MonaLisa.Path({ metric : metric, points : visited }));
 	    
 	    while (toVisit.length > 0) {
 		var bestIndex = 0;
@@ -33,8 +38,8 @@
 			bestMinimum = minimum;
 		    }
 		});
-		visited.push(bestCandidate);
-		toVisit.splice(bestIndex, 1);
+		visited.push(bestCandidate); toVisit.splice(bestIndex, 1);
+		callback(new MonaLisa.Path({ metric : metric, points : visited }));
 	    }
 	    return new MonaLisa.Path({ metric : metric, points : visited });
 	};
@@ -42,7 +47,8 @@
 
     
     var Random = function(metric){
-	this.solveFor = function(network){
+	this.solveFor = function(network, callback){
+	    callback = callback || function(){};
 	    var toVisit = network.toArray();
 	    var visited = [toVisit[0]]; toVisit = toVisit.slice(1);
 	    
@@ -51,7 +57,9 @@
 		visited.push(toVisit[anyIndex]);
 		toVisit.splice(anyIndex, 1);
 	    }
-	    return new MonaLisa.Path({ metric : metric, points : visited });
+	    var path = new MonaLisa.Path({ metric : metric, points : visited });
+	    callback(path);
+	    return path;
 	};
     };
 
