@@ -39,14 +39,14 @@ The Mona Lisa (La Gioconda) is a famous painting by the famous Italian
 Renaissance artist [Leonardo da Vinci][10]. The painting is well known for the 
 [enigmatic smile][11].
 
-[5]: http://git-scm.com/book/en/Git-Tools-Submodules "Git documentation on submodules"
 [1]: http://2012.jsconf.eu/ "Homepage for JSConf EU"
 [2]: http://en.wikipedia.org/wiki/Travelling_salesman_problem "Wikipedia on Travelling salesman problem."
 [3]: http://en.wikipedia.org/wiki/Mona_Lisa "Wikipedia on Mona Lisa"
 [4]: https://trello.com/board/monalisajs/4fe479136b39fd5e374fc4d7 "Trello Board for MonaLisaJS"
+[5]: http://git-scm.com/book/en/Git-Tools-Submodules "Git documentation on submodules"
 [6]: http://en.wikipedia.org/wiki/Graph_theory "Wikipedia on Graph Theory"
 [7]: http://en.wikipedia.org/wiki/William_Rowan_Hamilton "Wikipedia on Hamilton"
 [8]: http://en.wikipedia.org/wiki/Thomas_Kirkman "Wikipedia on Kirkman"
-[9]: "Wikipedia on Computational Complexity Theory"
+[9]: http://en.wikipedia.org/wiki/Computational_complexity_theory "Wikipedia on Computational Complexity Theory"
 [10]: http://en.wikipedia.org/wiki/Leonardo_da_Vinci "Wikipedia on Leonardo da Vinci"
-[11]: "Wikipedia on Speculation about Mona Lisa"
+[11]: http://en.wikipedia.org/wiki/Speculation_about_Mona_Lisa "Wikipedia on Speculation about Mona Lisa"
