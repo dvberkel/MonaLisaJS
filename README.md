@@ -13,6 +13,15 @@ of the
 Want to know where I am working on? Follow the 
 [Trello board](https://trello.com/board/monalisajs/4fe479136b39fd5e374fc4d7 "Trello Board for MonaLisaJS").
 
+Setup
+-----
+
+This project uses [submodules][5]. Run the following commands to get a
+working project.
+
+    $ git submodule init
+    $ git submodule update
+
 Travelling Salesman Problem
 ---------------------------
 
@@ -40,3 +49,5 @@ Renaissance artist
 [Leonardo da Vinci](http://en.wikipedia.org/wiki/Leonardo_da_Vinci "Wikipedia on Leonardo da Vinci").
 The painting is well known for the 
 [enigmatic smile]("Wikipedia on Speculation about Mona Lisa").
+
+[5]: http://git-scm.com/book/en/Git-Tools-Submodules "Git documentation on submodules"
