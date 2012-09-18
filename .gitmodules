@@ -1,3 +1,6 @@
 [submodule "deckjs"]
 	path = deckjs
 	url = git://github.com/imakewebthings/deck.js.git
+[submodule "toc"]
+	path = toc
+	url = git://github.com/jgallen23/toc.git
