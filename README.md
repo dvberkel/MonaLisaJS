@@ -18,6 +18,10 @@ working project.
     $ git submodule init
     $ git submodule update
 
+The above procedure should be repeated for the directory
+
+    deck.js
+
 Travelling Salesman Problem
 ---------------------------
 
