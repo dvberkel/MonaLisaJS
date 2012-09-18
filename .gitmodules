@@ -1,3 +1,6 @@
 [submodule "toc"]
 	path = toc
 	url = git://github.com/jgallen23/toc.git
+[submodule "deck.js"]
+	path = deck.js
+	url = git://github.com/dvberkel/deck.js.git
