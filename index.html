@@ -8,11 +8,16 @@
       <link rel="stylesheet" href="deckjs/themes/transition/horizontal-slide.css"/>
       <link rel="stylesheet" href="deckjs/extensions/menu/deck.menu.css"/>
       <link rel="stylesheet" href="deckjs/extensions/status/deck.status.css"/>
+      <link rel="stylesheet" href="deckjs/extensions/code-mirror/deck.codemirror.css"/>
+      <link rel="stylesheet" href="deckjs/extensions/code-mirror/themes/default.css"/>
       <script type="text/javascript" src="deckjs/modernizr.custom.js"></script>
       <script type="text/javascript" src="deckjs/jquery-1.7.2.min.js"></script>
       <script type="text/javascript" src="deckjs/core/deck.core.js"></script>
       <script type="text/javascript" src="deckjs/extensions/menu/deck.menu.js"></script>
       <script type="text/javascript" src="deckjs/extensions/status/deck.status.js"></script>
+      <script type="text/javascript" src="deckjs/extensions/code-mirror/codemirror.js"></script>
+      <script type="text/javascript" src="deckjs/extensions/code-mirror/mode/javascript/javascript.js"></script>
+      <script type="text/javascript" src="deckjs/extensions/code-mirror/deck.codemirror.js"></script>
       <script type="text/javascript" src="toc/dist/jquery.toc.min.js"></script>
       <script type="text/javascript" src="js/presentation.js"></script>
     </head>
@@ -24,6 +29,18 @@
       <section class="slide">
 	<h2>Agenda</h2>
 	<div id="toc"></div>
+      </section>
+
+      <section class="slide">
+	<h2>Code Sample</h2>
+	<div>
+	  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">// codemirror demo party!
+var greeter = function(name) {
+    return "Why hello there " + name;
+}
+console.log(greeter("Joe"));
+	  </textarea>
+	</div>
       </section>
 
       <section class="slide">
