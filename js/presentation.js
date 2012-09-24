@@ -6,7 +6,7 @@
 	    'smoothScrolling': false,
 	    'prefix': 'toc',
 	    'highlightOnScroll': false
-	});
+	}).decktoc();
 
 	$("textarea.code").snippits({
 	    onFinish : function(){$.deck(".slide");}
