@@ -1,4 +1,4 @@
-.frontispiece .title, .frontispiece .jsconfeu {
+.flap .title, .flap .jsconfeu {
     display: inline-block;
     min-height: 80px;
     padding-top: 120px;
@@ -6,11 +6,11 @@
     line-height: 0px;
 }
 
-.frontispiece .title {
+.flap .title {
     padding-right: 10px;
 }
 
-.frontispiece .jsconfeu {
+.flap .jsconfeu {
     min-width: 200px;
     color: white;
     background: #e2007a;
