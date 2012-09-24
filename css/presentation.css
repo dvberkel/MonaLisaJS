@@ -16,3 +16,28 @@
     background: #e2007a;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.slide {
+    position: relative;
+}
+
+.half {
+    width: 50%;
+}
+
+.full {
+    width: 94%;
+}
+
+.image-container {
+    height: 80%;
+    position: absolute;
+    top: 120px;
+    right: 3%;
+    z-index: -1;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
