@@ -1,0 +1,18 @@
+.frontispiece .title, .frontispiece .jsconfeu {
+    display: inline-block;
+    min-height: 80px;
+    padding-top: 120px;
+    padding-bottom: 0;
+    line-height: 0px;
+}
+
+.frontispiece .title {
+    padding-right: 10px;
+}
+
+.frontispiece .jsconfeu {
+    min-width: 200px;
+    color: white;
+    background: #e2007a;
+    font-family: Arial, Helvetica, sans-serif;
+}
