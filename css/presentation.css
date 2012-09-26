@@ -69,3 +69,13 @@
     -o-transform: scale(5,5) translateX(200px) rotate(-360deg);
     -ms-transform: scale(5,5) translateX(200px) rotate(-360deg);
 }
+
+.pointer {
+    position: absolute;
+    width: 20px;
+    height: 34px;
+    top: 0;
+    left: 0;
+    background-image: url("../image/pointers.png");
+    background-position: 0px 0px;
+}
