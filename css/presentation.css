@@ -46,3 +46,26 @@
   color: #e2007a;
 }
 
+.monalisa {
+    transition: transform 2s;
+    -moz-transition: -moz-transform 2s;
+    -webkit-transition: -webkit-transform 2s;
+    -o-transition: -o-transform 2s;
+}
+
+
+.monalisa.mouth {
+    transform: scale(5,5) translateY(150px) rotate(360deg);
+    -moz-transform: scale(5,5) translateY(150px) rotate(360deg);
+    -webkit-transform: scale(5,5) translateY(150px) rotate(360deg);
+    -o-transform: scale(5,5) translateY(150px) rotate(360deg);
+    -ms-transform: scale(5,5) translateY(150px) rotate(360deg);
+}
+
+.monalisa.road {
+    transform: scale(5,5) translateX(200px) rotate(-360deg);
+    -moz-transform: scale(5,5) translateX(200px) rotate(-360deg);
+    -webkit-transform: scale(5,5) translateX(200px) rotate(-360deg);
+    -o-transform: scale(5,5) translateX(200px) rotate(-360deg);
+    -ms-transform: scale(5,5) translateX(200px) rotate(-360deg);
+}

@@ -1,5 +1,9 @@
 (function($,undefined){
     $(function(){
+	$(".monalisa").monalisa({
+	    'states' : ['default', 'mouth', 'road']
+	});
+
 	$("#toc").toc({
 	    'selectors' : 'h2',
 	    'container' : 'body',
