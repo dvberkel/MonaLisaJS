@@ -79,3 +79,17 @@
     background-image: url("../image/pointers.png");
     background-position: 0px 0px;
 }
+
+table.explosion th {
+    border-bottom: 1px solid black;
+}
+
+table.explosion td, table.explosion th {
+    padding-top: 20px;
+    padding-right: 80px;
+    text-align: left;
+}
+
+table.explosion td:last-child, table.explosion th:last-child {
+    padding-right: 0;
+}
