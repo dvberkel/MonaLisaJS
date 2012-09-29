@@ -125,7 +125,33 @@
       <section class="slide">
 	<h3>P versus NP</h3>
 	<h4>What does P mean?</h4>
-	<textarea data-snippit="profile.js" class="code" mode="javascript" style="display: none;" runnable="true" globals="profile"></textarea>
+	<div class="slide">
+	  <p>Runtime for algorithm grows <em>polynomial</em> in input length</p>
+	  <p><strong>informally:</strong> algorithm is efficient</p>
+	</div>
+	<textarea data-snippit="profile_addition.js" class="code" mode="javascript" style="display: none;" runnable="true" globals="profile"></textarea>
+      </section>
+
+      <section class="slide">
+	<h3>P versus NP</h3>
+	<h4>What does NP mean?</h4>
+	<div class="slide">
+	  <p>Runtime for verification of result grows <em>polynomial</em> in input length</p>
+	  <p><strong>informally:</strong> result can be checked efficient</p>
+	</div>
+	<script type="codemirror" data-selector="#factorization">
+	  var oracle = function(input) {
+	    return {
+	      3: [3]
+	      , 31: [31]
+	      , 314: [2, 157]
+	      , 3141: [3, 3, 349]
+	      , 31415: [5, 61, 103]
+	      , 314159: [314159]
+	    }[input];
+	  };
+	</script>
+	<textarea id="factorization" data-snippit="profile_factorization.js" class="code" mode="javascript" style="display: none;" runnable="true" globals="profile"></textarea>
       </section>
 
       <section class="slide flap">

@@ -1,5 +1,5 @@
 var profile = (function($, _, undefined){
-    var report = _.template("<%= duration %>ms for <%= runs %> runs with <%= data %>");
+    var report = _.template("<%= result%> in <%= duration %>ms for <%= runs %> runs with <%= data %>");
 
     return function(method, options){
 	var settings = $.extend({
@@ -15,6 +15,7 @@ var profile = (function($, _, undefined){
 		    }
 		    var duration = (new Date).getTime() - start;
 		    console.log(report($.extend({
+			result : result,
 			duration : duration,
 			data : data
 		    }, settings)));
