@@ -1,20 +1,25 @@
-var profile = (function($, undefined){
+var profile = (function($, _, undefined){
+    var report = _.template("<%= duration %>ms for <%= runs %> runs with <%= data %>");
+
     return function(method, options){
 	var settings = $.extend({
 	    "runs" : 10000
 	}, options);
 	return {
-	    on : function(data) {
-		data.forEach(function(){
+	    on : function(datas) {
+		datas.forEach(function(data){
 		    var start = (new Date).getTime();
 		    var result;
 		    for (var index = 0; index < settings["runs"]; index++) {
 			result = method.apply(undefined, data);
 		    }
 		    var duration = (new Date).getTime() - start;
-		    console.log(duration);
+		    console.log(report($.extend({
+			duration : duration,
+			data : data
+		    }, settings)));
 		});
 	    }
 	};
     };
-})(jQuery)
+})(jQuery, _)
