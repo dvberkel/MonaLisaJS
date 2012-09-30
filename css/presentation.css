@@ -93,3 +93,8 @@ table.explosion td, table.explosion th {
 table.explosion td:last-child, table.explosion th:last-child {
     padding-right: 0;
 }
+
+p.announcement {
+    font-size: 200%;
+    color: #e2007a;
+}
