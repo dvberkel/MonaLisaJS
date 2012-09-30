@@ -140,15 +140,16 @@
 	  <p><strong>informally:</strong> result can be checked efficient</p>
 	</div>
 	<script type="codemirror" data-selector="#factorization">
-	  var oracle = function(input) {
-	    return {
-	      3: [3]
-	      , 31: [31]
-	      , 314: [2, 157]
-	      , 3141: [3, 3, 349]
-	      , 31415: [5, 61, 103]
-	      , 314159: [314159]
-	    }[input];
+	  var oracle = function(n) {
+	    var result = [], d = 2;
+	    do {
+	      while (n % d == 0) {
+	        result.push(d);
+	        n = n / d;
+	      }
+	      d++;
+	    } while(d <= n);
+            return result;
 	  };
 	</script>
 	<textarea id="factorization" data-snippit="profile_factorization.js" class="code" mode="javascript" style="display: none;" runnable="true" globals="profile"></textarea>
