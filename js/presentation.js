@@ -15,6 +15,8 @@
 		return "0px " + -clickCount * 34 + "px";
 	    }
 	});
+	  
+	$("#non-crossing").non_crossing();
 
 	$("#toc").toc({
 	    'selectors' : 'h2',

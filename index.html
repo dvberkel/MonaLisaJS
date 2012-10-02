@@ -12,7 +12,6 @@
       <link rel="stylesheet" href="deck.js/extensions/codemirror/deck.codemirror.css"/>
       <link rel="stylesheet" href="deck.js/extensions/codemirror/themes/default.css"/>
       <link rel="stylesheet" href="css/presentation.css"/>
-      <script type="text/javascript" src="lib/underscore.js"></script>
       <script type="text/javascript" src="deck.js/modernizr.custom.js"></script>
       <script type="text/javascript" src="deck.js/jquery-1.7.2.min.js"></script>
       <script type="text/javascript" src="deck.js/core/deck.core.js"></script>
@@ -22,11 +21,15 @@
       <script type="text/javascript" src="deck.js/extensions/codemirror/codemirror.js"></script>
       <script type="text/javascript" src="deck.js/extensions/codemirror/mode/javascript/javascript.js"></script>
       <script type="text/javascript" src="deck.js/extensions/codemirror/deck.codemirror.js"></script>
+      <script type="text/javascript" src="lib/underscore.js"></script>
+      <script type="text/javascript" src="lib/backbone.js"></script>
+      <script type="text/javascript" src="lib/raphael-min.js"></script>
       <script type="text/javascript" src="toc/dist/jquery.toc.min.js"></script>
       <script type="text/javascript" src="js/jquery.snippits.js"></script>
       <script type="text/javascript" src="js/jquery.deck-toc.js"></script>
       <script type="text/javascript" src="js/jquery.monalisa.js"></script>
       <script type="text/javascript" src="js/jquery.pointify.js"></script>
+      <script type="text/javascript" src="js/jquery.non_crossing.js"></script>
       <script type="text/javascript" src="js/profile.js"></script>
       <script type="text/javascript" src="js/presentation.js"></script>
     </head>
@@ -173,7 +176,12 @@
 	  <img src="http://imgs.xkcd.com/comics/travelling_salesman_problem.png" alt="xkcd 399">
 	</div>
       </section>
-      
+
+      <section class="slide">
+	<h2>TSP Art</h2>
+	<h4>Property of a route</h4>
+	<div id="non-crossing"></div>
+      </section>
       <section class="slide flap">
 	<h1><span class="title">Questions</span><span class="jsconfeu">?</span></h1>
       </section>
