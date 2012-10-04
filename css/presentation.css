@@ -98,3 +98,7 @@ p.announcement {
     font-size: 200%;
     color: #e2007a;
 }
+
+#viewport {
+    text-align: center;
+}
