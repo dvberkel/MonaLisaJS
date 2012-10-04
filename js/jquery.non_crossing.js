@@ -33,8 +33,12 @@
 	var ur = point(paper, settings, width - offset, height/3 - offset, 2*width/3 + offset, offset);
 	var ll = point(paper, settings, width/3 - offset, height - offset, offset, 2*height/3 + offset);
 	var lr = point(paper, settings, width - offset, height - offset, 2*width/3 + offset, 2*height/3 + offset);
-	var down_path = path(paper, [[0,0], [ul.attrs.cx, ul.attrs.cy], [lr.attrs.cx, lr.attrs.cy], [width, height]]);
-	var up_path = path(paper, [[0, height], [ll.attrs.cx, ll.attrs.cy], [ur.attrs.cx, ur.attrs.cy], [width, 0]]);
+	var down_path = path(paper, [
+	    [ul.attrs.cx,0], [ul.attrs.cx, ul.attrs.cy], [lr.attrs.cx, lr.attrs.cy], [lr.attrs.cx, height]
+	]);
+	var up_path = path(paper, [
+	    [ll.attrs.cx, height], [ll.attrs.cx, ll.attrs.cy], [ur.attrs.cx, ur.attrs.cy], [ur.attrs.cx, 0]
+	]);
 	return [ul, ur, ll, lr];
     };
 
