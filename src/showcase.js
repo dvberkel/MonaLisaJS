@@ -46,9 +46,9 @@
 	var paper = Raphael("maximum", 460, 320);
 	paper.rect(0, 0, 460, 320).attr("fill", "ivory");
 
-	var maximum = MonaLisa.NetworkFactory.cycleNetworkOfSize(1000);
-	var maximumTransformX = function(x){ return x + 230; };
-	var maximumTransformY = function(y){ return y + 160; };
+	var maximum = MonaLisa.NetworkFactory.cycleNetworkOfSize(200);
+	var maximumTransformX = function(x){ return 3 * x + 230; };
+	var maximumTransformY = function(y){ return 3 * y + 160; };
 
 	new MonaLisa.NetworkView({
 	    model : maximum,
@@ -68,5 +68,28 @@
 	    transformY : maximumTransformY
 	});
 
+	var paper = Raphael("monalisa", 460, 320);
+	paper.rect(0, 0, 460, 320).attr("fill", "ivory");
+	
+	var monalisa = monalisa_network;
+	var monalisaTransformX = function(x){ return x/3 - 300; };
+	var monalisaTransformY = function(y){ return y/3 + 0; };
+
+	// new MonaLisa.NetworkView({
+	//     model : monalisa,
+	//     paper : paper,
+	//     transformX : monalisaTransformX,
+	//     transformY : monalisaTransformY,
+	//     radius : 1/10
+	// });
+
+	var monalisaPath = MonaLisa.Strategy.Greedy.withMetric(MonaLisa.Metric.euclidean).solveFor(monalisa);
+
+	new MonaLisa.PathView({
+	    model : monalisaPath,
+	    paper : paper,
+	    transformX : monalisaTransformX,
+	    transformY : monalisaTransformY
+	});
     });
 })(jQuery, Raphael,  MonaLisa);
