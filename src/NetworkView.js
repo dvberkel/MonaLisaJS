@@ -7,6 +7,7 @@
 
 	render : function() {
 	    var view = this;
+	    var radius = view.options.radius || 5;
 	    var tx = view.options.transformX;
 	    var ty = view.options.transformY;
 	    this.model.forEach(function(point){

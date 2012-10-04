@@ -42,5 +42,31 @@
 	    transformX : gridTransformX,
 	    transformY : gridTransformY
 	});
+
+	var paper = Raphael("maximum", 460, 320);
+	paper.rect(0, 0, 460, 320).attr("fill", "ivory");
+
+	var maximum = MonaLisa.NetworkFactory.cycleNetworkOfSize(1000);
+	var maximumTransformX = function(x){ return x + 230; };
+	var maximumTransformY = function(y){ return y + 160; };
+
+	new MonaLisa.NetworkView({
+	    model : maximum,
+	    paper : paper,
+	    transformX : maximumTransformX,
+	    transformY : maximumTransformY,
+	    radius : 2
+	});
+
+	// var maximumPath = MonaLisa.Strategy.BruteForce.withMetric(MonaLisa.Metric.euclidean).solveFor(maximum); // 8
+	var maximumPath = MonaLisa.Strategy.Greedy.withMetric(MonaLisa.Metric.euclidean).solveFor(maximum); // 1000
+
+	new MonaLisa.PathView({
+	    model : maximumPath,
+	    paper : paper,
+	    transformX : maximumTransformX,
+	    transformY : maximumTransformY
+	});
+
     });
 })(jQuery, Raphael,  MonaLisa);
